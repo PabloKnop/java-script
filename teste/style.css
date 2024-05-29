@@ -1,0 +1,38 @@
+div{
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+input{
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+label{
+  background-color: blue;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  text-wrap: nowrap;
+  align-items: center;
+}
+
+label::before{
+  content: "";
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: 2px solid black;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+input:checked + label::before{
+  background-color: white;
+  box-shadow: inset 0 0 0 3px black, inset 0 0 0 5px blue;
+}
